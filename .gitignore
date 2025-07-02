@@ -1,4 +1,4 @@
-# Logs
+# --- Логи и кэш ---
 logs
 *.log
 npm-debug.log*
@@ -6,20 +6,51 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.cache/
+.cache-loader/
+.eslintcache
 
-node_modules
-dist
-dist-ssr
+# --- Папки сборки ---
+node_modules/
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+
+# --- Временные и системные файлы ---
 *.local
+.DS_Store
+Thumbs.db
 
-# Editor directories and files
+# --- .env и переменные окружения ---
+.env
+.env.*        # .env.local, .env.production и т.п.
+!.env.example # если ты хранишь шаблон .env
+
+# --- IDE и редакторы ---
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-*.env
+
+# --- Типизация и кэш TypeScript ---
+*.tsbuildinfo
+
+# --- Storybook ---
+storybook-static/
+*.stories.tsx
+*.stories.js
+*.stories.mdx
+
+# --- Playwright и тесты ---
+test-results/
+playwright-report/
+
+# --- MacOS и Linux ---
+*.orig
+*.rej
