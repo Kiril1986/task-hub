@@ -1,0 +1,21 @@
+.avatar {
+  border-radius: 9999px;
+  border: none;
+  object-fit: cover;
+  background-color: var(--chart-7);
+  filter: brightness(0.9) saturate(1.2);
+}
+
+.sm {
+  width: 24px;
+  height: 24px;
+}
+
+.md {
+  width: 32px;
+  height: 32px;
+}
+
+.overlap {
+  margin-left: -8px;
+}

@@ -1,0 +1,37 @@
+.purple {
+  background-color: var(--chart-6);
+  border-radius: 30px;
+  transition: width 1s ease-in-out;
+}
+
+.green {
+  background-color: var(--chart-2);
+  border-radius: 30px;
+  transition: width 1s ease-in-out;
+}
+
+.yellow {
+  background-color: var(--chart-4);
+  border-radius: 30px;
+  transition: width 1s ease-in-out;
+}
+
+.progressBarStriped {
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBarStriped::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 0,
+    rgba(255, 255, 255, 0.2) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}

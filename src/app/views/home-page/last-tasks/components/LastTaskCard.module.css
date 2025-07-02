@@ -1,0 +1,28 @@
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  object-fit: cover;
+  background-color: var(--chart-7);
+  filter: brightness(0.9) saturate(1.2);
+}
+
+.avatar:not(:first-child) {
+  margin-left: -8px;
+}
+
+.iconBg {
+  position: relative;
+  z-index: 0;
+}
+
+.iconBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--chart-7);
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: -1;
+}
