@@ -40,55 +40,64 @@ export default function EditTaskModal() {
     setEditingTask(null);
   };
 
+  const inputClasses =
+  'w-full p-[8px] h-[24px] max-w-[250px] border rounded-[20px] cursor-pointer font-poppins';
+
+  const buttonClasses =
+  'px-[12px] py-[6px] rounded-[20px] cursor-pointer border-solid font-poppins';
+
+  const errorClasses =
+  'text-[var(--chart-1)] text-[16px] mb-[12px]';
+
   return ReactDOM.createPortal(
     <div className={`modal fixed top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 p-[16px] text-foreground shadow-lg rounded-[20px] max-w-[400px] w-full z-[9998] ${styles.modal}`}>
       <h2>Edit Task</h2>
 
       <label className="block mb-[8px] text-[14px]">Title</label>
       <input
-        className="mb-[12px] w-full p-[8px] h-[24px] max-w-[250px] border rounded-[20px] cursor-pointer font-poppins"
+        className={`mb-[12px] ${inputClasses}`}
         value={editingTask.title}
         onChange={(e) =>
           handleFieldChange('title', e.target.value)
         }
         type="text"
       />
-      {errors.title && <p className="text-[var(--chart-1)] text-[16px] mt-[0] ml-[0] mr-[0] mb-[12px]">{errors.title}</p>}
+      {errors.title && <p className={errorClasses}>{errors.title}</p>}
 
       <label className="block mb-[8px] text-[14px]">Due in (days)</label>
       <input
         type="date"
-        className="mb-[12px] w-full p-[8px] h-[24px] border rounded max-w-[250px] rounded-[20px] cursor-pointer font-poppins"
+        className={`mb-[12px] ${inputClasses}`}
         value={editingTask.daysLeft}
         onChange={(e) =>
           handleFieldChange('daysLeft', e.target.value)
         }
       />
-      {errors.daysLeft && <p className="text-[var(--chart-1)] text-[16px] mb-[8px]">{errors.daysLeft}</p>}
+      {errors.daysLeft && <p className={errorClasses}>{errors.daysLeft}</p>}
 
       <label className="block mb-[8px] text-[14px]">Progress (%)</label>
       <input
         type="number"
         min={0}
         max={100}
-        className="mb-[16px] w-full p-[8px] h-[24px] border rounded max-w-[250px] rounded-[20px] cursor-pointer font-poppins"
+        className={`mb-[12px] ${inputClasses}`}
         value={editingTask.progress}
         onChange={(e) =>
           handleFieldChange('progress', Number(e.target.value))
         }
       />
-      {errors.progress && <p className="text-[var(--chart-1)] text-[16px] mt-[0] ml-[0] mr-[0] mb-[12px]">{errors.progress}</p>}
+      {errors.progress && <p className={errorClasses}>{errors.progress}</p>}
 
       <div className="flex justify-end gap-[8px]">
         <button
           onClick={() => setEditingTask(null)}
-          className="px-[12px] py-[6px] rounded-[20px] cursor-pointer border-solid font-poppins"
+          className={buttonClasses}
         >
           Cancel
         </button>
         <button
           onClick={handleSave}
-          className="px-[12px] py-[6px] rounded-[20px] cursor-pointer border-solid font-poppins"
+          className={buttonClasses}
         >
           Save
         </button>
