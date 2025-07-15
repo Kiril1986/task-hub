@@ -1,9 +1,7 @@
 import { useState, useCallback } from 'react';
 
 import { sections } from './constants';
-import styles from './SideBar.module.css';
 
-import { cn } from '@/lib/utils';
 import SideBarItem from '../side-bar-item/SideBarItem';
 
 function SideBar() {
@@ -12,10 +10,10 @@ function SideBar() {
     setSelectedItem(key);
   }, []);
   return (
-    <aside className="w-64 border-r bg-white p-6 space-y-8 mt-[36px] p-[8px]">
+    <aside className="w-64 bg-white space-y-8 mt-6 p-4 col-span-1">
       {sections.map((section) => (
         <div key={section.title}>
-          <h4 className={cn('text-xs font-semibold text-muted-foreground text-base mb-2 tracking-wider', styles.sectionTitle)}>
+          <h4 className="font-semibold text-gray-300 text-base mb-2 tracking-wider">
             {section.title}
           </h4>
           <nav className="flex flex-col gap-2">

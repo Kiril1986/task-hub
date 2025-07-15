@@ -12,7 +12,7 @@ function SideBarButtonWithColorSquare({ color, className, children, isActive = f
     <Button
       variant="sidebar"
       className={cn(
-        'flex rounded-[20px] items-center cursor-pointer justify-start gap-[8px] text-base w-full font-poppins p-[10px] border-none mb-[8px] bg-transparent',
+        'flex rounded-3xl items-center cursor-pointer justify-start gap-2 text-sm w-full font-poppins p-3 border-none mb-2 bg-transparent',
         isActive
           ? 'bg-[var(--chart-6)] text-card'
           : 'hover:bg-muted hover:text-foreground transition-colors text-muted-foreground',
@@ -21,7 +21,7 @@ function SideBarButtonWithColorSquare({ color, className, children, isActive = f
       {...props}
     >
       <span
-        className="w-[12px] h-[12px]"
+        className="w-3 h-3"
         style={{ backgroundColor: color }}
       />
       {children}

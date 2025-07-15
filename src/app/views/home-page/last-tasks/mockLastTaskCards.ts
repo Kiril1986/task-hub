@@ -15,6 +15,7 @@ export type LastTask = {
   type: TaskType;
   status: 'Done' | 'Upcoming' | 'In progress',
   assignees: string[];
+  subtasks?: LastTask[];
 };
 
 const now = new Date();
@@ -133,6 +134,18 @@ export const lastTasks: LastTask[] = [
     id: '9',
     title: 'Write meeting notes',
     daysLeft: addDays(2),
+    progress: 50,
+    messages: 7,
+    images: 0,
+    attachments: 0,
+    type: 'docs',
+    assignees,
+    status: 'In progress',
+  },
+  {
+    id: '10',
+    title: 'Write book',
+    daysLeft: addDays(4),
     progress: 50,
     messages: 7,
     images: 0,

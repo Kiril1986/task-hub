@@ -1,25 +1,17 @@
-import { Plane, UsersRound, BookOpen, Bug, Computer, Palette } from 'lucide-react';
 import styles from './TaskTypeIcon.module.css';
 import type { TaskType } from '../../mockLastTaskCards';
+import { iconsMap } from './iconsMap';
 
 type Props = {
   type: TaskType;
 };
 
-const iconsMap = {
-  design: Palette,
-  dev: Computer,
-  bug: Bug,
-  docs: BookOpen,
-  meeting: UsersRound,
-  travel: Plane,
-};
 
 export default function TaskTypeIcon({ type }: Props) {
   const IconComponent = iconsMap[type];
   return (
-    <div className={`w-[32px] h-[32px] rounded-full flex items-center mt-[4px] justify-center ${styles.iconBg}`}>
-      {IconComponent && <IconComponent className="text-[var(--chart-6)] w-[16px] h-[16px]" />}
+    <div className={`w-10 h-10 rounded-full shrink-0 flex items-center mt-1 justify-center ${styles.iconBg}`}>
+      {IconComponent && <IconComponent size={16} className="text-[var(--chart-6)]" />}
     </div>
   );
 }

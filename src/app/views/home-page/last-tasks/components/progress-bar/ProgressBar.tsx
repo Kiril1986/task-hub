@@ -22,14 +22,14 @@ export default function ProgressBar({ progress, status}: Props) {
   );
 
   return (
-    <div className="bg-ring rounded-[24px] h-[40px] overflow-hidden">
+    <div className="bg-ring rounded-3xl h-10 w-full">
       <div className={className} style={{ width: `${progress}%` }}>
         {progress >= PROGRESS_MINIMUM && progress < 100 && (
-          <p className="text-[var(--card)] text-[12px] z-[2] relative">{progress}%</p>
+          <p className="text-[var(--card)] text-xs z-[2] relative">{progress}%</p>
         )}
         {progress === PROGRESS_MAXIMUM && (
-          <p className="text-[var(--card)] text-[12px] z-[2] relative flex items-center gap-[4px]">
-            <CircleCheck className="w-[16px] h-[16px]" />
+          <p className="text-[var(--card)] text-xs z-[2] relative flex items-center gap-1">
+            <CircleCheck size={16} />
             Done
           </p>
         )}

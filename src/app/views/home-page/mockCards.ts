@@ -1,20 +1,19 @@
-import activeProjectsIcon from './assets/active-projects.svg';
-import ongoingProjectsIcon from './assets/ongoing-projects.svg';
-import workingHoursIcon from './assets/working-hours.svg';
+import ActiveProjectsIcon from './assets/active-projects.svg?react';
+import OngoingProjectsIcon from './assets/ongoing-projects.svg?react';
+import WorkingHoursIcon from './assets/working-hours.svg?react';
 
 export const iconsMap = {
-  'active-projects': activeProjectsIcon,
-  'ongoing-projects': ongoingProjectsIcon,
-  'working-hours': workingHoursIcon,
+  'active-projects': ActiveProjectsIcon,
+  'ongoing-projects': OngoingProjectsIcon,
+  'working-hours': WorkingHoursIcon,
 } as const;
 
 export type Card = {
-    icon: keyof typeof iconsMap;
-    number: string;
-    text: string;
-    background: string;
+  icon: keyof typeof iconsMap;
+  number: string;
+  text: string;
+  background: string;
 };
-
 
 export const cardsData = [
   {

@@ -1,0 +1,11 @@
+Credentials для авторизации:
+
+email: admin@admin.com
+password: admin
+
+Просьба посмотреть: 
+1. Визуал, скриншот прилагается
+2. Структуру проекта
+3. посмотреть Авторизацию: /app/auth
+4. EditTaskModal и/или AddTaskModal если есть время
+5. Carousel если есть время

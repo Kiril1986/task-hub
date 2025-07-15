@@ -21,8 +21,8 @@ function getTaskStartingAt(hour: number) {
 export default function WorkdayTimeline() {
   const [activeHour, setActiveHour] = useState<number | null>(null);
   return (
-    <div className="p-[16px] shadow-md">
-      <div className="grid grid-cols-9 gap-[8px]">
+    <div className="p-4 shadow-md">
+      <div className="grid grid-cols-9 gap-2">
         {hours.map((hour) => {
           const task = getTaskStartingAt(hour);
           const isActive = activeHour === hour;
@@ -30,12 +30,12 @@ export default function WorkdayTimeline() {
           return (
             <div
               key={hour}
-              className="relative h-[24px] rounded-[12px] bg-muted flex items-center justify-center p-[4px] cursor-pointer"
+              className="relative h-6 rounded-xl bg-muted flex items-center justify-center p-1 cursor-pointer"
               onClick={() => setActiveHour(isActive ? null : hour)}
             >
               <span
                 className={clsx(
-                  'absolute top-[4px] left-[4px] text-[12px]',
+                  'absolute top-1 left-1 text-base',
                   task && isActive ? 'text-[var(--chart-6)] font-medium' : 'text-muted-foreground',
                 )}
               >
@@ -43,7 +43,7 @@ export default function WorkdayTimeline() {
               </span>
 
               {task && isActive && (
-                <div className="absolute top-full -left-[4px] mt-[4px] z-10">
+                <div className="absolute top-full -left-1 mt-1 z-10">
                   <TodayTaskCard task={task} key={task.id} />
                 </div>
               )}

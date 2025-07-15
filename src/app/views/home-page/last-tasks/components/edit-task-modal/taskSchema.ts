@@ -18,8 +18,7 @@ export const taskSchema = z.object({
     }, {
       message: 'Date must not be in the past',
     }),
-  progress: z
-    .number()
-    .min(0, 'Progress must be at least 0')
-    .max(100, 'Progress cannot exceed 100'),
+  type: z.enum(['design', 'dev', 'bug', 'docs', 'meeting', 'travel'], {
+    required_error: 'Task type is required',
+  }),
 });
