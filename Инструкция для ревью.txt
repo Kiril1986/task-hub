@@ -7,5 +7,7 @@ password: admin
 1. Визуал, скриншот прилагается
 2. Структуру проекта
 3. посмотреть Авторизацию: /app/auth
-4. EditTaskModal и/или AddTaskModal если есть время
-5. Carousel если есть время
+4. feature Last Tasks features/tasks/last-tasks
+5. feature Today Tasks features/tasks/today-tasks
+6. EditTaskModal и/или AddTaskModal если есть время
+7. Carousel если есть время

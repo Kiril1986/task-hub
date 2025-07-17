@@ -20,10 +20,10 @@ function SideBarSelect({ values }: SideBarSelectProps) {
 
   const selected = values.find(v => v.name === selectValue);
 
-  const handleLogoutClick = (e: React.MouseEvent) => {
+  const handleLogoutClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    logout();
+    await logout();
     setOpen(false);
   };
   return (
@@ -63,7 +63,7 @@ function SideBarSelect({ values }: SideBarSelectProps) {
         <button
           onPointerDown={e => e.preventDefault()}
           className="px-3 py-2 w-full cursor-pointer flex items-center justify-center gap-2 hover:bg-red-600 hover:text-white border-0 rounded mt-1"
-          onClick={handleLogoutClick}
+          onClick={e => void handleLogoutClick(e)}
         >
           <span>Logout</span>
           <LogOut size={16}/>

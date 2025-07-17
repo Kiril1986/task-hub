@@ -14,7 +14,7 @@ function MainLayout({children}: Props) {
   return (
     <div className="grid grid-cols-[250px_minmax(0,_1fr)_300px] gap-4">
       <SideBar/>
-      <div className="p-4 bg-neutral-400/20 max-w-236 w-full mx-auto">
+      <div className="p-4 bg-neutral-400/20 max-w-236 w-full mx-auto pb-14">
         <Header />
         <main>
           {children}

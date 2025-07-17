@@ -1,6 +1,6 @@
 import axios, { AxiosError, type AxiosInstance } from 'axios';
 
-const baseURL = import.meta.env.VITE_API_PROJECT_URL;
+const baseURL = import.meta.env.VITE_SUPABASE_URL;
 if (!baseURL) {
   throw new Error('VITE_API_PROJECT_URL is not defined');
 }

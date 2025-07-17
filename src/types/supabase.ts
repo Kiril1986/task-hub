@@ -14,7 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      last_tasks: {
+        Row: {
+          assignees: Json | null
+          attachements: number | null
+          created_at: string
+          due_date: string
+          id: number
+          images: number | null
+          messages: Json | null
+          progress: number | null
+          status: string | null
+          sub_tasks: Json | null
+          title: string | null
+          type: string | null
+        }
+        Insert: {
+          assignees?: Json | null
+          attachements?: number | null
+          created_at?: string
+          due_date: string
+          id?: number
+          images?: number | null
+          messages?: Json | null
+          progress?: number | null
+          status?: string | null
+          sub_tasks?: Json | null
+          title?: string | null
+          type?: string | null
+        }
+        Update: {
+          assignees?: Json | null
+          attachements?: number | null
+          created_at?: string
+          due_date?: string
+          id?: number
+          images?: number | null
+          messages?: Json | null
+          progress?: number | null
+          status?: string | null
+          sub_tasks?: Json | null
+          title?: string | null
+          type?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
